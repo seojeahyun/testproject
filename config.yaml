@@ -1,0 +1,18 @@
+# 매매 설정. dry_run 이 true 이면 주문을 내지 않고 이력만 기록합니다.
+dry_run: true
+interval_seconds: 300
+symbols:
+  - "005930"   # 삼성전자
+  - "000660"   # SK하이닉스
+rsi:
+  period: 14
+  buy_below: 30      # RSI 가 이 값 이하이면 매수
+  sell_above: 33     # RSI 가 이 값 이상이고 수익 조건을 만족하면 매도
+order:
+  buy_amount_krw: 100000      # 1회 매수 금액
+  max_daily_krw: 300000       # 하루 최대 매수 금액
+risk:
+  min_profit_pct: 0.5         # 수수료·세금을 넘기 위한 최소 수익률(%), 평단 대비
+  market_open: "09:00"
+  market_close: "15:20"
+db_path: data/bot.db
